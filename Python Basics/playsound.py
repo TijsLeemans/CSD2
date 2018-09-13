@@ -5,7 +5,7 @@ n = int(input("zeg het maar, hoe vaak wil je hem hebben? "))
 
 def player(n):
     if n == 0:
-        print("okiii klaar")
+        print("okiii klaar... daaaaag!")
         time.sleep(1)
         return
     else:
