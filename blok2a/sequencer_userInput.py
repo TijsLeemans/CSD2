@@ -36,6 +36,42 @@ We will trigger events based on a timestamp.
   (multiple possible solutions)
 
 """
+def inputNumber(message):
+  while True:
+    try:
+       userInput = int(input(message))
+    except ValueError:
+       print("Ehh hier kan ik niet zo veel mee vriend. Probeer het eens opnieuw")
+       continue
+    else:
+       return userInput
+       break
+
+
+# set bpm
+print("He gebruikertje, het standaard bpm van dit scipt is 120. Wil je dit veranderen?")
+bpm = inputNumber("Hoe snel wil je dat ik ga? ")
+# calculate the duration of a quarter note
+timeCalc = [0.25, 0.5, 0.25, 0.5, 0.5, 1]
+startValue = [0]
+startValuems = []
+bpm = 120
+quarterNoteDuration = 60 / bpm
+# calculate the duration of a sixteenth note
+sixteenthNoteDuration = quarterNoteDuration / 4.0
+for value in timeCalc:
+    startValue.append(value * 4 + max(startValue))
+
+print(startValue)
+
+
+for value in startValue;
+    startValuems.append(value * sixteenthNoteDuration)
+
+print(startValuems)
+
+timestamps =  [0, 1, 3, 4, 6, 8, 12]
+
 l = int(input("Aantal maten? "))
 Repeat = [None] * l
 # load 1 audioFile and store it into a list
@@ -43,20 +79,11 @@ Repeat = [None] * l
 samples = [ sa.WaveObject.from_wave_file("audioFiles/Dog2.wav"),
             sa.WaveObject.from_wave_file("audioFiles/Laser1.wav")]
 
-# set bpm
-bpm = 120
-# calculate the duration of a quarter note
-quarterNoteDuration = 60 / bpm
-# calculate the duration of a sixteenth note
-sixteenthNoteDuration = quarterNoteDuration / 4.0
-
-
-
 for value in Repeat:
     # create a list to hold the timestamps
     timestamps = []
     # create a list with ‘note timestamps' in 16th at which we should play the sample
-    timestamps16th = [0, 2, 4, 8, 11]
+    timestamps16th =  [0, 1, 3, 4, 6, 8, 12]
     # transform the sixteenthTimestamps to a timestamps list with time values
     for timestamp in timestamps16th:
       timestamps.append(timestamp * sixteenthNoteDuration)
