@@ -29,7 +29,7 @@ def player(maatValue):
             print(value)
             playSnare()
             time.sleep((60/BPM)*value)
-                                            #forloop exit en hetstart maat controle
+                                            #forloop exit en herstart maat controle
         return (player(maatValue-1))
 
 #oproepen fuctie bij het aanroepen van dit programma.
